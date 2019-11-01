@@ -5,7 +5,7 @@
 
 
 template <class T>
-class BoxRandom {
+class BoxRandomII {
 public:
 	typedef T ValueType;
 
@@ -21,6 +21,7 @@ public:
 	bool Shuffle(const unsigned int& Seed = 0) {
 		std::mt19937 mt(Seed);
 		std::shuffle(Box.begin(), Box.end(), mt);
+		Idx = 0;
 		return true;
 	}
 

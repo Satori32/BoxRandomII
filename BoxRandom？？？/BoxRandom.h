@@ -19,7 +19,7 @@ public:
 	}
 
 	template<class Rnd>
-	bool Shuffle(const Rnd& R) {
+	bool Shuffle(Rnd& R) {
 		std::shuffle(Box.begin(), Box.end(), R);
 		Idx = 0;
 		return true;
@@ -30,7 +30,7 @@ public:
 		Idx = 0;
 		return true;
 	}
-	std::intmax_t Remaining() {
+	std::intmax_t Remaining() const{
 		return ((std::intmax_t)Box.size()) - Idx;
 	}
 

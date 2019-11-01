@@ -3,7 +3,6 @@
 #include <random>
 #include <cstdint>
 
-
 template <class T>
 class BoxRandomII {
 public:
@@ -46,10 +45,10 @@ public:
 		Idx %= Box.size();
 		return true;
 	}
-	std::size_t Now() {
+	std::size_t Now() const{
 		return Idx;
 	}
-	std::size_t Size() {
+	std::size_t Size() const {
 		return Box.size();
 	}
 

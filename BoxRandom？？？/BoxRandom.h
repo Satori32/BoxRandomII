@@ -18,13 +18,18 @@ public:
 		return Box[Idx % Box.size()];
 	}
 
-	bool Shuffle(const unsigned int& Seed = 0) {
+	template<class Rnd>
+	bool Shuffle(const Rnd& R) {
+		std::shuffle(Box.begin(), Box.end(), R);
+		Idx = 0;
+		return true;
+	}
+	bool Randomize(const unsigned int& Seed=0) {
 		std::mt19937 mt(Seed);
 		std::shuffle(Box.begin(), Box.end(), mt);
 		Idx = 0;
 		return true;
 	}
-
 	std::intmax_t Remaining() {
 		return ((std::intmax_t)Box.size()) - Idx;
 	}
@@ -40,6 +45,9 @@ public:
 	bool Round() {
 		Idx %= Box.size();
 		return true;
+	}
+	std::size_t Now() {
+		return Idx;
 	}
 	std::size_t Size() {
 		return Box.size();

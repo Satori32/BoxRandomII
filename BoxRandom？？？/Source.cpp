@@ -8,7 +8,8 @@ int main() {
 	for (std::size_t i = 0; i < L; i++) {
 		B.Push(i);
 	}
-	B.Shuffle(0xdeadbeef);
+	std::mt19937 mt(0xdeadbeef);
+	B.Shuffle(mt);
 	for (std::size_t i = 0; i < B.Size(); i++) {
 		std::cout << B.Get() << ',';
 		B.Forward();

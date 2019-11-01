@@ -3,7 +3,7 @@
 #include "BoxRandom.h"
 
 int main() {
-	BoxRandom<std::size_t> B;
+	BoxRandomII<std::size_t> B;
 	std::size_t L = 16;
 	for (std::size_t i = 0; i < L; i++) {
 		B.Push(i);
